@@ -1,0 +1,39 @@
+css Copy code
+
+/* Global CSS or dedicated header CSS file */
+.nav-link {
+  transition: color 0.3s ease;
+  color: #ffffff;
+  /* Default text color */
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  /* Lighter color on hover */
+}
+
+.active-nav-link {
+  position: relative;
+  color: #ffffff;
+  /* Active link text color */
+}
+
+.active-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  /* Adjust the underline position */
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+.active-nav-link:hover::after,
+.active-nav-link:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+}
